@@ -4,7 +4,8 @@ def solution(record):
     for msg in record:
         str_split = msg.split(' ')
         if str_split[0] == 'Enter': #Enter
-            user[str_split[1]] = str_split[2]
+            user[str_split[1]
+            ] = str_split[2]
         elif str_split[0] == 'Change':   #chagne
             user[str_split[1]] = str_split[2]
         else:   #leave
