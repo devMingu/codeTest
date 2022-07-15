@@ -27,8 +27,8 @@
 
 
 # BFS
-from collections import deque
-
+# from collections import deque
+#
 # def bfs(graph, start, visited):
 #     queue = deque([start])
 #     visited[start] = True
@@ -40,7 +40,7 @@ from collections import deque
 #             if not visited[i]:
 #                 queue.append(i)
 #                 visited[i] = True
-
+#
 # graph = [
 #     [],
 #     [2,3,8],
