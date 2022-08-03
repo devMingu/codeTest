@@ -1,4 +1,4 @@
-def dfs(x, y):
+def dfs(x, y): # x는 행 y는 열
     if x <= -1 or x >= n or y<= -1 or y >= m:
         return False
 
