@@ -8,7 +8,7 @@ for _ in range(n):
     arr.append([a,b])
 arr.sort()
 
-day = arr[-1][0]
+day = arr[-1][0] # 가장 늦은 데드라인
 h = []
 answer = 0
 while day > 0:
@@ -24,4 +24,5 @@ while day > 0:
     day -= 1
 
 print(answer)
+
 
