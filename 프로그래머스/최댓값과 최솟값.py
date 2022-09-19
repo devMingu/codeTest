@@ -15,3 +15,4 @@ def solution(s):
     answer += str(l[-1])
 
     return answer
+
