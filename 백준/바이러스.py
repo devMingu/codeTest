@@ -24,38 +24,79 @@
 # bfs(computer, 1, visited)
 #
 # print(visited.count(True) - 1)
+
+
+
+# def dfs(graph, v, visited):
+#     visited[v] = True
+#
+#     for i in graph[v]:
+#         if not visited[i]:
+#             dfs(graph, i, visited)
 #
 #
 #
+# def sortGraph(graph):
+#     for i in range(1, N + 1):
+#         graph[i].sort()
+#     return graph
+#
+#
+# N = int(input())
+# M = int(input())
+#
+# graph = [[] for _ in range(N+1)]
+# visited = [False] * (N+1)
+# for _ in range(M):
+#     a, b = map(int, input().split())
+#     graph[a].append(b)
+#     graph[b].append(a)
+#
+# graph = sortGraph(graph)
+# dfs(graph, 1, visited)
+#
+# print(visited.count(True) - 1)
+
+# from collections import deque
+#
+# def bfs(graph, start, visited):
+#     queue = deque([start])
+#     visited[start] = True
+#     while queue:
+#         v = queue.popleft()
+#
+#         for i in graph[v]:
+#             if not visited[i]:
+#                 queue.append(i)
+#                 visited[i] = True
+#
+#
+# def sortGraph(graph):
+#     for i in range(len(graph)):
+#         graph[i].sort()
+#
+#     return graph
+#
+# N = int(input())
+# M = int(input())
+#
+# graph = [[] for _ in range(N+1)]
+# visited = [False] * (N+1)
+#
+# for _ in range(M):
+#     a, b = map(int, input().split())
+#     graph[a].append(b)
+#     graph[b].append(a)
+#
+# graph = sortGraph(graph)
+# bfs(graph, 1, visited)
+#
+# answer = visited.count(True) - 1
+# print(answer)
 
 
-def dfs(graph, v, visited):
-    visited[v] = True
-
-    for i in graph[v]:
-        if not visited[i]:
-            dfs(graph, i, visited)
 
 
 
-def sortGraph(graph):
-    for i in range(1, N + 1):
-        graph[i].sort()
-    return graph
 
-
-N = int(input())
-M = int(input())
-
-graph = [[] for _ in range(N+1)]
-visited = [False] * (N+1)
-for _ in range(M):
-    a, b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
-
-graph = sortGraph(graph)
-dfs(graph, 1, visited)
-
-print(visited.count(True) - 1)
 
