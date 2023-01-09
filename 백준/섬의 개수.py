@@ -40,46 +40,47 @@
 
 
 #BFS 풀이방법
-from collections import deque
-def bfs(x,y):
-    queue = deque()
-    queue.append((x,y))
+# from collections import deque
+# def bfs(x,y):
+#     queue = deque()
+#     queue.append((x,y))
+#
+#     while queue:
+#         x, y = queue.popleft()
+#         for i in range(8):
+#             nx = x + dx[i]
+#             ny = y + dy[i]
+#
+#             if nx < 0 or nx >= h or ny < 0 or ny >= w:
+#                 continue
+#             if matrix[nx][ny] == 0:
+#                 continue
+#
+#             if matrix[nx][ny] == '1':
+#                 matrix[nx][ny] = '0'
+#                 queue.append((nx, ny))
+#
+#     return 1
+#
+#
+# dx = [-1, -1, -1, 1, 1, 1, 0, 0]
+# dy = [-1, 0, 1, -1, 0, 1, -1, 1]
+#
+# while True:
+#     w, h = map(int, input().split())
+#     if w == h == 0:
+#         break
+#     matrix = []
+#     answer = 0
+#     idx = 0
+#     while idx < h:
+#         pos = input().split(' ')
+#         matrix.append(pos)
+#         idx += 1
+#
+#     for i in range(h):
+#         for j in range(w):
+#             if matrix[i][j] == '1':
+#                 answer += bfs(i, j)
+#     print(answer)
 
-    while queue:
-        x, y = queue.popleft()
-        for i in range(8):
-            nx = x + dx[i]
-            ny = y + dy[i]
-
-            if nx < 0 or nx >= h or ny < 0 or ny >= w:
-                continue
-            if matrix[nx][ny] == 0:
-                continue
-
-            if matrix[nx][ny] == '1':
-                matrix[nx][ny] = '0'
-                queue.append((nx, ny))
-
-    return 1
-
-
-dx = [-1, -1, -1, 1, 1, 1, 0, 0]
-dy = [-1, 0, 1, -1, 0, 1, -1, 1]
-
-while True:
-    w, h = map(int, input().split())
-    if w == h == 0:
-        break
-    matrix = []
-    answer = 0
-    idx = 0
-    while idx < h:
-        pos = input().split(' ')
-        matrix.append(pos)
-        idx += 1
-
-    for i in range(h):
-        for j in range(w):
-            if matrix[i][j] == '1':
-                answer += bfs(i, j)
-    print(answer)
