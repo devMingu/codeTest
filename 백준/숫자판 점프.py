@@ -1,38 +1,31 @@
-from collections import deque
+def dfs(x, y, tmp):
+    if len(tmp) == 6:
+        if tmp not in result:
+            result.append(tmp)
+        return
 
-def bfs(x,y):
-    queue = deque()
-    queue.append((x,y))
+    if x < 0 or x >= 4 or y < 0 or y >= 4:
+        return
 
-    answer = ""
-    answer += str(graph[x][y])
-    cnt = 5
-    while cnt:
-        x, y = queue.popleft()
+    dfs(x-1, y, tmp+graph[x-1][y])
+    dfs(x, y-1, tmp+graph[x][y-1])
+    dfs(x+1, y, tmp+graph[x+1][y])
+    dfs(x, y+1, tmp+graph[x][y+1])
 
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-
-            if nx < 0 or nx >= 5 or ny < 0 or ny >= 5:
-                continue
-            else:
-                answer += str(graph[nx][ny])
-                queue.append((nx, ny))
-        cnt -= 1
-    print(answer)
-    return answer
 
 
 
 graph = []
-for _ in range(5):
-    x = map(int, input().split())
-    graph.append(list(x))
+for i in range(5):
+    n = input().split(' ')
+    graph.append(n)
 
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
+result = []
 for i in range(5):
     for j in range(5):
-        bfs(i, j)
+        dfs(i, j, graph[i][j])
+
+print(len(result))
