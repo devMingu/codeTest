@@ -21,6 +21,7 @@ n, m = map(int, input().split())
 graph = []
 visited = [[False] * m for _ in range(n)]
 check = 0
+print(visited)
 
 for _ in range(n):
     x = map(int, input())
@@ -82,3 +83,14 @@ else:
 #     print("YES")
 # else:
 #     print("NO")
+
+
+
+
+
+
+
+
+
+
+
