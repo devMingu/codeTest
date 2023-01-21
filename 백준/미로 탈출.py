@@ -116,3 +116,7 @@
 # answer = "YES" if visited[M-1].count(True) else "NO"
 # print(answer)
 
+a = [[1,2,3,4]]
+
+if not [1,2,3,5] in a:
+    print("YS")
