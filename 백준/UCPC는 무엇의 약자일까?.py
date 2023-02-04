@@ -13,6 +13,7 @@ name = ["U", "C", "P", "C"]
 ans = play(title)
 print(ans)
 # # 1. U
+
 # idx = title.index("U")
 # title = title[idx+1::]
 # # 2. C
