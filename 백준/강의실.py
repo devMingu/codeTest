@@ -27,3 +27,36 @@ def queue_sort():
 answer = queue_sort()
 print(answer)
 
+
+
+# import heapq
+#
+# n = int(input())
+# h = []
+#
+# lecture = []
+# for _ in range(n):
+#     number, start, end = map(int, input().split())
+#     lecture.append([start, end])
+#
+# lecture.sort()
+#
+#
+# answer = 0
+# for el in lecture:
+#     s, e = el[0], el[1]
+#
+#     if len(h) == 0:
+#         heapq.heappush(h, e)
+#         answer += 1
+#         continue
+#
+#     if h[0] <= s:
+#         heapq.heappop(h)
+#         heapq.heappush(h, e)
+#
+#     else:
+#         heapq.heappush(h, e)
+#         answer += 1
+#
+# print(answer)
