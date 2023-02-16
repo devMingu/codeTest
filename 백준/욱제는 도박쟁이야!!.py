@@ -16,7 +16,4 @@ makeMaximum(start)
 
 
 
-5 -2 -7 -8 9 1 = -2
-
-
 
