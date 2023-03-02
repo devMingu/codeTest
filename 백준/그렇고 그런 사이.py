@@ -4,6 +4,7 @@ original = [i for i in range(1, N+1)]
 answer = [0] * N
 idx = 0
 for i in range(N-1, 0, -1):
+
     if K >= i:
         K -= i
         original[i] = -1
