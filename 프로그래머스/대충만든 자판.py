@@ -21,7 +21,8 @@ def count_key(targets, keyboard):
            if item in keyboard:
                ans += keyboard[item]
            else:
-               return [-1]
+               ans = -1
+               break
 
         result.append(ans)
 
@@ -37,9 +38,36 @@ def solution(keymap, targets):
     print(answer)
     return answer
 
-# solution(["ABACD", "BCEFD"], ["ABCD","AABB"])
-# solution(["AA"], ["B"])
-# solution(["AGZ", "BSSS"], ["ASA","BGZ"])
+
+
+######## 두 번째 풀이방법 ##########
+
+# def solution(keymap, targets): # 두 번째 풀이법
+#     answer = []
+#
+#     for item in targets:
+#         res = 0
+#         for el in item:
+#             min_pos = 101
+#             flag = 0
+#             for keyItem in keymap:
+#                 if el in keyItem:
+#                     min_pos = min(keyItem.index(el) + 1, min_pos)
+#                     flag = 1
+#
+#             if flag == 0:
+#                 res = -1
+#                 break
+#             res += min_pos
+#         answer.append(res)
+#
+#     print(answer)
+#     return answer
+
+
+solution(["ABACD", "BCEFD"], ["ABCD","AABB"])
+solution(["AA"], ["B"])
+solution(["AGZ", "BSSS"], ["ASA","BGZ"])
 solution(["ABACD", "BCEFD"], ["XABCD", "AABB"])
-solution(["AA"], ["BA"])
+solution(["AA"], ["BA", "C"])
 solution(["0"], ["0"])
