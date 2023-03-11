@@ -48,14 +48,3 @@ while tmp_cake:
 
 
 print(len(answer))
-
-
-
-
-
-
-
-
-
-
-
