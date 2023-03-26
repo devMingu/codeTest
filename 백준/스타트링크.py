@@ -8,13 +8,16 @@ def bfs(v):
         q = queue.popleft()
 
         for i in range(2):
+            # 0칸 움직이는 버튼은 눌러도 의미가 없다.
+            if dx[i] == 0:
+                continue
             if i == 0:
                 nq = q - dx[i]
             else:
                 nq = q + dx[i]
-            # print(nq)
 
-            if nq < 0 or nq > F:
+
+            if nq < 1 or nq > F:
                 continue
 
             if not visited[nq]:
@@ -30,11 +33,15 @@ def bfs(v):
 
 
 
-
 F, S, G, U, D = map(int, input().split())
 
 visited = [0 for _ in range(F+1)]
-print(bfs(S))
+
+# 층이 같을땐 움직일 필요가 없음
+if S == G:
+    print(visited[S])
+else:
+    print(bfs(S))
 
 # F층으로 이루어진 건물
 # 스타링크 회사의 위치 G층
