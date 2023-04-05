@@ -96,8 +96,4 @@ def solution(maps):
 
     answer = v2[row_e][col_e] + v1[row_l][col_l] - 2
 
-    # 1. 레버까지의 최단 경로
-    # 2. 레버의 위치에서 출구 찾기
-    # 레버 찾는 방법과 탈출구 찾는 방법을 따로따로 생각해줘야함
-
     return answer
