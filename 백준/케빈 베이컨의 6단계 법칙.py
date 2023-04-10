@@ -48,3 +48,7 @@ for i in range(1, N+1):
     if tmp == answer[i]:
         print(i)
         break
+
+
+# 각 브랜치별로 체크하면 됨
+
