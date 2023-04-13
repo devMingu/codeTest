@@ -1,5 +1,11 @@
 from collections import deque
 
+def move_water(nx, ny, q):
+    if visited[nx][ny] == False:
+        visited[nx][ny] = True
+        q.append((nx, ny))
+
+
 def bfs(x,y):
     q = deque([])
     q.append((x, y))
@@ -16,55 +22,41 @@ def bfs(x,y):
         water = min(x, b-y)
         nx = x - water
         ny = y + water
-
-        if visited[nx][ny] == False:
-            visited[nx][ny] = True
-            q.append((nx, ny))
+        move_water(nx, ny, q)
 
         # x -> z
         water = min(x, c-z)
         nx = x - water
         ny = y
-
-        if visited[nx][ny] == False:
-            visited[nx][ny] = True
-            q.append((nx, ny))
+        move_water(nx, ny, q)
 
         # y -> x
         water = min(y, a-x)
         nx = x + water
         ny = y - water
+        move_water(nx, ny, q)
 
-        if visited[nx][ny] == False:
-            visited[nx][ny] = True
-            q.append((nx, ny))
 
         # y -> z
         water = min(y, c-z)
         nx = x
         ny = y - water
+        move_water(nx, ny, q)
 
-        if visited[nx][ny] == False:
-            visited[nx][ny] = True
-            q.append((nx, ny))
 
         # z -> x
         water = min(z, a-x)
         nx = x + water
         ny = y
+        move_water(nx, ny, q)
 
-        if visited[nx][ny] == False:
-            visited[nx][ny] = True
-            q.append((nx, ny))
 
         # z -> y
         water = min(z, b-y)
         nx = x
         ny = y + water
+        move_water(nx, ny, q)
 
-        if visited[nx][ny] == False:
-            visited[nx][ny] = True
-            q.append((nx, ny))
 
 
 
