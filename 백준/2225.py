@@ -10,3 +10,6 @@ for i in range(1, k+1):
         dp[i][j] %= mod
 
 print(dp[k][n])
+
+
+# dp는 여전히 어렵다...
