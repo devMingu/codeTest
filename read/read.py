@@ -33,3 +33,7 @@
 #     -Can you think of other ways to refactor?
 #     -How have other people solved this problem?
 
+
+
+# 캡스톤 디자인
+# 1. 서버와 문제 해결 완료 2023-04-25 16:06
