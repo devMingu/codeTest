@@ -14,3 +14,6 @@ def solution(players, callings):
         players[pre], players[post] = players[post], players[pre]
 
     return players
+
+
+# enumerate를 통해 인덱스와 value 값을 가져올 수 있음
