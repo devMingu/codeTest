@@ -1,43 +1,23 @@
 from collections import deque
 
-def bfs(x, y):
-    visited[x][y] = True
-    q = deque([])
+def
 
-    q.append((x, y))
+def bfs(v, a, b):
+    q = deque()
+    q.append(v)
 
     while q:
-        x, y = q.popleft()
-        move = matrix[x][y]
-
-        for i in range(2):
-            nx = x + dx[i]*move
-            ny = y + dy[i]*move
-
-            if nx < 0 or nx >= n or ny < 0 or ny >= n:
-                continue
-
-            if visited[nx][ny] == False:
-                visited[nx][ny] = True
-                q.append((nx, ny))
-
-                if nx == n - 1 and ny == n - 1:
-                    return "HaruHaru"
-
-    return "Hing"
+        q = q.popleft()
 
 
-n = int(input())
-
-matrix = []
-for _ in range(n):
-    col = list(map(int, input().split()))
-    matrix.append(col)
-
-visited = [[False] * n for _ in range(n)]
-
-dx = [1,0]
-dy = [0, 1]
 
 
-print(bfs(0, 0))
+
+N = int(input())
+bridge = list(map(int, input().split()))
+a, b = map(int, input().split())
+
+visited = [0 for _ in range(N + 1)]
+
+print(visited)
+
