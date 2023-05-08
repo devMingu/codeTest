@@ -65,7 +65,8 @@ def solution(plans):
                 break
 
     while wait:
-        a, b = wait.pop()
+        a, b = wait.pop()이
+        \\
         answer.append(b)
 
     return answer
