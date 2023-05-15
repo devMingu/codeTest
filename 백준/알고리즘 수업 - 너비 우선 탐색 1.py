@@ -32,8 +32,8 @@ for _ in range(M):
     graph[u].append(v)
     graph[v].append(u)
 
-    graph[u].sort()
-    graph[v].sort()
+for i in range(1, len(graph)):
+    graph[i].sort()
 
 bfs(R, visited, graph)
 
