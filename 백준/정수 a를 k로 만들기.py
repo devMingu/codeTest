@@ -4,8 +4,6 @@ def bfs():
     q = deque()
     q.append(A)
 
-
-
     while q:
         v = q.popleft()
         for i in range(2):
