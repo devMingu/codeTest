@@ -1,7 +1,5 @@
 from collections import deque
 
-def
-
 def bfs(v, a, b):
     q = deque()
     q.append(v)
