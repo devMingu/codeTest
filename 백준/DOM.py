@@ -1,4 +1,6 @@
+import sys
 from collections import deque
+input = sys.stdin.readline
 
 def bfs(v):
     q = deque()
@@ -9,13 +11,13 @@ def bfs(v):
     while q:
         v = q.popleft()
         for i in range(len(graph[v])):
-            if graph[v][i] != 0 and hate_channel[v][i] == 0:
+            if graph[v][i] != 0 and visited[v][i] == 0:
                 q.append(graph[v][i])
-                hate_channel[v][i] = 1
+                visited[v][i] = 1
                 cnt += 1
                 break
 
-            if hate_channel[v][i] == 1:
+            if visited[v][i] == 1:
                 return -1
 
     return cnt
@@ -26,11 +28,12 @@ def bfs(v):
 N, M, P = map(int, input().split())
 
 graph = [[] for _ in range(M + 1)]
-hate_channel = [[] for _ in range(M + 1)]
+visited = [[] for _ in range(M + 1)]
 
 for _ in range(N):
     a, b = map(int, input().split())
     graph[b].append(a)
-    hate_channel[b].append(0)
-
+    visited[b].append(0)
+print(graph)
+print(visited)
 print(bfs(P))
