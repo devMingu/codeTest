@@ -11,7 +11,7 @@ def bfs(v):
     while q:
         v = q.popleft()
         for i in range(len(graph[v])):
-            if graph[v][i] != 0 and visited[v][i] == 0:
+            if visited[v][i] == 0:
                 q.append(graph[v][i])
                 visited[v][i] = 1
                 cnt += 1
@@ -34,6 +34,5 @@ for _ in range(N):
     a, b = map(int, input().split())
     graph[b].append(a)
     visited[b].append(0)
-print(graph)
-print(visited)
+
 print(bfs(P))
