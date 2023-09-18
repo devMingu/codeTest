@@ -95,6 +95,36 @@
 # print(answer)
 
 
+from collections import deque
+
+def bfs(v):
+    visited[v] = True
+    queue = deque([v])
+
+    while queue:
+        v = queue.popleft()
+
+        for el in matrix[v]:
+            if not visited[el]:
+                visited[el] = True
+                queue.append(el)
+
+N = int(input())
+M = int(input())
+
+matrix = [[] for _ in range(N+1)]
+visited = [False for _ in range(N+1)]
+
+for _ in range(M):
+    x1, x2 = map(int, input().split())
+    matrix[x1].append(x2)
+    matrix[x2].append(x1)
+
+bfs(1)
+
+print(visited.count(True) - 1)
+
+
 
 
 

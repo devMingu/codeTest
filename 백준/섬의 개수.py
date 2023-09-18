@@ -84,3 +84,68 @@
 #                 answer += bfs(i, j)
 #     print(answer)
 
+from collections import deque
+
+def bfs(x, y, matrix, visited):
+    visited[x][y] = True
+    q = deque([[x, y]])
+
+    while q:
+        x, y = q.popleft()
+
+        for i in range(8):
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+            if nx < 0 or nx >= h or ny < 0 or ny >= w:
+                continue
+
+            if not visited[nx][ny] and matrix[nx][ny] == 1:
+                q.append([nx, ny])
+                visited[nx][ny] = True
+
+    return 1
+
+
+dy = [-1, -1, -1, 1, 1, 1, 0, 0]
+dx = [0, -1, 1, 0, -1, 1, -1, 1]
+
+while True:
+    w, h = map(int, input().split())
+
+    if w == h == 0:
+        break
+
+    matrix = []
+    visited = []
+    result = 0
+    for _ in range(h):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+        visited.append([False for _ in range(w)])
+
+    for x in range(h):
+        for y in range(w):
+            if not visited[x][y] and matrix[x][y] != 0:
+                result += bfs(x, y, matrix, visited)
+
+    print(result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
